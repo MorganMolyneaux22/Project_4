@@ -1,0 +1,317 @@
+/* Items Added to new Style Sheet 
+- Added keyframe animation to nav-bar that changes color slowly instead of imediattly
+- Centered navbar to be in the center
+- Changed Background colors from one solid color to a gradient in the light.css
+- Changed text font
+- Added button to change from dark to light mode in style sheet (this works somewhat-
+but when you revert back, the main background color will not change). 
+- Mobile friendly using media queries to change size and height
+
+
+*/
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #140800; /* Light gray background */
+    color: #333; /* Dark gray text color */
+}
+
+header {
+    background-color: #005D79; /* Blue header background */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: larger;
+}
+
+/* Keyframes for the color change animation */
+@keyframes colorChange {
+    0% {
+        background-color: #005D79;
+    }
+    100% {
+        background-color: #48c6ef; /* Light blue color on hover */
+    }
+}
+
+/* Apply the color change animation to the buttons */
+.nav-link {
+    background-color: #005D79;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-color: black;
+
+    /* Set animation properties */
+    transition: background-color 0.3s;
+}
+
+/* Add the hover effect with the color change animation */
+.nav-link:hover {
+    animation: colorChange 1s infinite alternate;
+}
+
+/* a:hover {
+    background-color: #40404C;
+    text-decoration: underline;
+} */
+
+/* Change the size of main home page (lengt, width blah blah) */
+main {
+    padding: 20px;
+    height: 1100px;
+    background: linear-gradient(to bottom, #005D79, #791C00);
+    background-color: #791C00;
+    
+    /* background-color: yellow; */
+}
+
+#home h1 {
+    text-shadow: 8px 8px black;
+}
+
+#home{
+    text-align: center;
+    grid-template-rows: max-content;
+    color: white;
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    /* width: 1000;
+    height: 500; */
+}
+
+.iframe-container iframe {
+    /* width: 1000;
+    height: 500; */
+    max-width: 1000;
+    max-height: 500;
+}
+
+.image_rig_carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image_rig_carousel img {
+    width: 22%;
+    max-width: 750px;
+    height: 200px;
+}
+
+/* Full Sized Screen */
+@media (max-width: 768px) {
+    .image_rig_carousel img {
+        width: 30%;
+    }
+}
+
+/* Phone Sized/ Tablet Sized Screen */
+@media (max-width: 400px) {
+    .image_rig_carousel img {
+        width: 100%;
+        height: 100px;
+    }
+}
+
+.about_img_contain img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.paragraphs {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    gap: 20px;
+}
+
+.paragraphs p {
+    flex: 1;
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    margin: 0;
+}
+
+.paragraphs h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Footer style */
+.footer {
+    background: linear-gradient(to bottom, #791C00, #005D79);
+    background-color: #795800;
+    padding: 40px 0;
+}
+
+.foot_contain {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.foot_section {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+}
+
+.foot_section h3 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.foot_section p {
+    color: white;
+    line-height: 1.5;
+}
+
+.foot_bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: white;
+}
+
+
+
+/* Style for the About us Page */
+/* I was going to put the image on the right and text on the left, but when I went to create
+a new flexbox.  It would cause the text to become unhidden on the main page.
+*/
+/* #about {
+    display: flex;
+    align-items: center;
+    
+} */
+/* .text_contain {
+    flex: 1;
+    padding-right: 20px; 
+}
+
+.about_img_contain {
+    flex: 1;
+}
+
+.about_img_contain img {
+    max-width: 100%;
+    height: auto;
+} */
+
+
+/* About us style section */
+.text_contain {
+    text-align: center;
+    color: white;
+    background-color: #003E51;
+    height: 200px;
+}
+
+.about_img_contain {
+    text-align: center;
+}
+
+.about_img_contain img {
+    max-width: 50%;
+    height: auto;
+}
+
+section:not(.active) {
+    display: none;
+}
+
+
+
+
+/* Contact us style section */
+#contact {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  #contact h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  
+  .info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: white;
+  }
+  
+  .form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+  
+  /* This CSS was pulled online.  I couldn't figure it out because of the style kept messing up */
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .form button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form button:hover {
+    background-color: #45a049;
+  }
+  
