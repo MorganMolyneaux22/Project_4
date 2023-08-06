@@ -1,4 +1,4 @@
-// Morgan Molyneaux, June 28, 2023, Purpose of program: Javascript to hide and unhide sections when <a> is clicked
+// The entirety of this code and the repository in which it's contained was crafted and developed by Morgan Molyneaux.
 const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach(link => {

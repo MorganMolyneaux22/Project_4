@@ -1,13 +1,16 @@
-<!-- Morgan Molyneaux, June 28, 2023: Purpose of program: Basic prototype showcasing
-basic layout for next project. 
+<!-- Morgan Molyneaux, July 28, 2023: Purpose of program: Showcase basic knowledge of eventlister using Javascript.  To 
+    make an interactable Vistor Form.  If user it to enter invalid information, pop-up form to follow.  Detailing
+    to the user what they are missing/required.
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Project 3</title>
     <link rel="stylesheet" href="dark.css">
-    
+
 </head>
+
 <body>
     <header>
         <nav>
@@ -22,7 +25,10 @@ basic layout for next project.
         <section id="home" class="active">
             <!-- <iframe src="https://www.youtube.com/embed/Q-aEPdpfzc8&t=16s" width="500" height="300" frameborder="0" allowfullscreen></iframe> -->
             <div class="video">
-                <iframe width="1000" height="500" src="https://www.youtube.com/embed/Q-aEPdpfzc8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="1000" height="500" src="https://www.youtube.com/embed/Q-aEPdpfzc8"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
             <h1>Featured Projects</h1>
             <div class="image_rig_carousel">
@@ -35,15 +41,20 @@ basic layout for next project.
                     <!-- <img src="image5.jpg" alt="Image 5"> -->
                 </figure>
                 <div class="paragraphs">
-                    <p>We have completed a wide variety of power, telecom and natural gas pipeline installations consisting of conduit and manhole structure, 
-                        conductor installation and termination, direct bury cable or wire, cable pulling and blowing, aerial front and rear lot installation, 
+                    <p>We have completed a wide variety of power, telecom and natural gas pipeline installations
+                        consisting of conduit and manhole structure,
+                        conductor installation and termination, direct bury cable or wire, cable pulling and blowing,
+                        aerial front and rear lot installation,
                         IHP “Intermediate High Pressure” and limited High Pressure natural gas pipeline installations.
                     </p>
-                    <p>We provide top service for Heavy Civil construction including intersection reconstruction, continuous flow intersection, multi-faceted 
-                        main street beautification, culvert relining, concrete roadway rehab, roadway reconstruction, safe school zone roadway projects, power 
+                    <p>We provide top service for Heavy Civil construction including intersection reconstruction,
+                        continuous flow intersection, multi-faceted
+                        main street beautification, culvert relining, concrete roadway rehab, roadway reconstruction,
+                        safe school zone roadway projects, power
                         substation earthwork, grading and site utility installation.
                     </p>
-                    <p>We provide outstanding service for various culinary water and secondary water projects, sanitary sewer line relocations and extensions, 
+                    <p>We provide outstanding service for various culinary water and secondary water projects, sanitary
+                        sewer line relocations and extensions,
                         drainage structures and drainage pipe installation projects.
                     </p>
                 </div>
@@ -52,12 +63,18 @@ basic layout for next project.
         <section id="about">
             <div class="text_contain">
                 <h1><b>About us</b></h1>
-                <p>B. Jackson Construction and Engineering Inc. was started in February 1997 by Bart Jackson and has completed a wide variety of wet 
-                    and dry utility as well as heavy civil projects for various privately held and municipal organizations. Throughout the years, B. Jackson 
-                    Construction and Engineering Inc. has become a recognized leader in the construction industry. The company has completed 
-                    telecommunications, cable television(CATV), fiber to the home, power, natural gas pipeline, airport, electrical, heavy civil work and a 
-                    variety of maintenance projects.  Due to the success and the professional abilities of its employees, the company has grown into a safe, 
-                    reliable and professional organization. Our years of experience combined with our dedication to safety, quality and value have made 
+                <p>B. Jackson Construction and Engineering Inc. was started in February 1997 by Bart Jackson and has
+                    completed a wide variety of wet
+                    and dry utility as well as heavy civil projects for various privately held and municipal
+                    organizations. Throughout the years, B. Jackson
+                    Construction and Engineering Inc. has become a recognized leader in the construction industry. The
+                    company has completed
+                    telecommunications, cable television(CATV), fiber to the home, power, natural gas pipeline, airport,
+                    electrical, heavy civil work and a
+                    variety of maintenance projects. Due to the success and the professional abilities of its employees,
+                    the company has grown into a safe,
+                    reliable and professional organization. Our years of experience combined with our dedication to
+                    safety, quality and value have made
                     B. Jackson Construction and Engineering Inc. the organization it is today.
                 </p>
             </div>
@@ -67,30 +84,58 @@ basic layout for next project.
         </section>
         <section id="contact">
             <h1>Contact us</h1>
-            <div class="info">
-                <h2>Contact Information</h2>
-                <p><strong>Address:</strong> Utah</p>
-                <p><strong>Email:</strong> randomfake@gmail.com</p>
-                <p><strong>Phone:</strong> +1 435-000-0101</p>
+            <div id="thank_you" style="display:none;">
+                Thank you!
             </div>
             <div class="form">
-                <h2>Contact Form</h2>
-                <!-- Button informtation pulled from geeksforgeeks and partial CSS -->
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                    <button type="submit">Submit</button>
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required onblur="checkRequired(this)">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required onblur="checkRequired(this)">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required onblur="checkRequired(this)">
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required onblur="checkRequired(this)">
+
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" minlength="2" maxlength="2" required
+                        onblur="validateState(this.value)">
+
+                    <label for="zip">Zip:</label>
+                    <input type="text" id="zip" name="zip" required onblur="checkFormat('zip', this.value)">
+
+                    <label for="cellPhone">Cell Phone:</label>
+                    <input type="text" id="cellPhone" name="cellPhone" required
+                        onblur="checkFormat('phone', this.value)">
+
+                    <label for="email">Email Address:</label>
+                    <input type="text" id="email" name="email" required
+                        onblur="checkFormat('email', this.value)">
+
+                    <label>How did you find my page?</label><br>
+                    <input type="checkbox" id="internet" name="findSource" value="Internet">
+                    <label for="internet">Internet</label>
+                    <input type="checkbox" id="friend" name="findSource" value="Friend">
+                    <label for="friend">Friend</label>
+                    <input type="checkbox" id="google" name="findSource" value="Google">
+                    <label for="google">Google</label><br><br>
+
+                    <label for="comments">Comments:</label><br>
+                    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+                    <button id="submitBtn" type="submit">Submit</button>
+                </fieldset>
                 </form>
-            </div>
         </section>
-        
+
     </main>
     <script src="script.js"></script>
-
+    <script src="validate.js"></script>
     <footer class="footer">
         <div class="foot_contain">
             <div class="foot_section">

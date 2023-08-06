@@ -10,6 +10,7 @@ but when you revert back, the main background color will not change).
 
 */
 
+/* The entirety of this code and the repository in which it's contained was crafted and developed by Morgan Molyneaux. */
 
 
 
@@ -262,56 +263,65 @@ section:not(.active) {
 
 
 /* Contact us style section */
-#contact {
-    text-align: center;
-    padding: 50px;
-  }
-  
-  #contact h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
 
-  
-  .info p {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: white;
-  }
-  
-  .form label {
+#contact {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
     display: block;
-    font-size: 16px;
-    margin-bottom: 6px;
-    text-align: left;
-  }
-  
-  /* This CSS was pulled online.  I couldn't figure it out because of the style kept messing up */
-  .form input,
-  .form textarea {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="email"], 
+textarea {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .contact-form textarea {
-    resize: vertical;
-  }
-  
-  .form button {
-    background-color: #4CAF50;
+    font-size: 1em;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #3498db;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .form button:hover {
-    background-color: #45a049;
-  }
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#thank_you {
+    text-align: center;
+    font-size: 1.5em;
+    color: #2ecc71;
+    padding: 20px 0;
+}
   
